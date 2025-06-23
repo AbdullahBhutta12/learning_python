@@ -1,20 +1,3 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('Pycharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-
 # Starting Python
 
 
@@ -25,10 +8,56 @@ email = "abdullah@gmail.com"
 print(f"Hello{first_name}")
 print(f"You like {food}")
 print(f"Your email is {email}")
-print(len(email) )
+print(len(email))
 print(email[10])
+
 # Integers
 age = 20
 height = 5.6
 print(f"You are {age} years old")
 print(f"Your height is {height}")
+
+# Escape sequences
+course = "Python \"Programming\" "
+message = "\nPython \nProgramming "
+print(course, message)
+
+# String
+message = " This is a message"
+print(len(message))
+print(message[3])
+print(message[-3])
+print(message[0:5])
+print(message[0:])
+print(message[:9])
+
+# Formatted string
+first = "Abdullah"
+last = "Saeed"
+full = f"{first} {last} {2 * 2}"
+print(full)
+
+# String methods
+course = "  Python programming "
+print(course.upper())
+print(course.lower())
+print(course.title())
+print(course.strip())
+print(course.find("gram"))
+print(course.replace("P", "J"))
+print("gram" in course)
+print("swift" not in course)
+
+# Numbers
+print(10 + 3)
+print(10 - 3)
+print(10 * 3)
+print(10 / 3)
+print(10 % 3)
+print(10 ** 3)
+print(10 // 3)
+
+# Working with numbers
+
+print(round(2.9))
+print(abs(-31))
