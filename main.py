@@ -11,11 +11,6 @@ print(f"Your email is {email}")
 print(len(email))
 print(email[10])
 
-# Integers
-age = 20
-height = 5.6
-print(f"You are {age} years old")
-print(f"Your height is {height}")
 
 # Escape sequences
 course = "Python \"Programming\" "
@@ -29,7 +24,7 @@ print(message[3])
 print(message[-3])
 print(message[0:5])
 print(message[0:])
-print(message[:9])
+print(message[1:-4])
 
 # Formatted string
 first = "Abdullah"
@@ -48,16 +43,3 @@ print(course.replace("P", "J"))
 print("gram" in course)
 print("swift" not in course)
 
-# Numbers
-print(10 + 3)
-print(10 - 3)
-print(10 * 3)
-print(10 / 3)
-print(10 % 3)
-print(10 ** 3)
-print(10 // 3)
-
-# Working with numbers
-
-print(round(2.9))
-print(abs(-31))
