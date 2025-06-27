@@ -24,13 +24,15 @@ print(message[3])
 print(message[-3])
 print(message[0:5])
 print(message[0:])
-print(message[1:-4])
+print(message[1:-4 ])
+
 
 # Formatted string
 first = "Abdullah"
 last = "Saeed"
 full = f"{first} {last} {2 * 2}"
 print(full)
+
 
 # String methods
 course = "  Python programming "

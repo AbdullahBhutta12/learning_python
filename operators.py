@@ -10,6 +10,7 @@ else:
     print("It's cold")
 print("Done")
 
+
 # Ternary Operator
 
 age = 16
@@ -20,6 +21,7 @@ age = 16
 #   print(message)
 message = "Eligible" if age >= 18 else "Not eligible"
 print(message)
+
 
 # Logical Operators
 
