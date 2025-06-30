@@ -16,14 +16,26 @@ print(f"Your height is {height}")
 
 # Working with numbers
 
-import math
+#import math
 
-print(round(2.9))
-print(abs(-31))
-print(math.ceil(2.9))
+#print(round(2.9))
+#print(abs(-31))
+#print(math.ceil(2.9))
 
 
-x = input("Enter value of x: ")
-y = int(x) + 5
-print(f"x: {x}, y: {y}")
+# User input (input()) and Type casting
+
+length = float(input("Enter length: "))
+width = float(input("Enter width: "))
+area = length * width
+print(f"The area is {area}cm")
+
+
+#name = "Abc Def"
+#age = 20
+#gpa = 3.95
+#is_student = True
+#name = bool(name)
+
+#print(name)
 
