@@ -14,15 +14,15 @@ class Employee:
         return position in valid_positions
 
 
-employee1 = Employee("Ali", "Manager")
-employee2 = Employee("Adnan", "Cashier")
-employee3 = Employee("Zafar", "Cook")
-
-
+#employee1 = Employee("Ali", "Manager")
+# employee2 = Employee("Adnan", "Cashier")
+# employee3 = Employee("Zafar", "Cook")
+#
+#
 print(Employee.is_valid_position("Cook"))
 print(Employee.is_valid_position("Security Guard"))
 print(Employee.is_valid_position("Cashier"))
 
-print(employee1.get_info())
-print(employee2.get_info())
-print(employee3.get_info())
+# print(employee3.get_info())
+# print(employee1.get_info())
+# print(employee2.get_info())

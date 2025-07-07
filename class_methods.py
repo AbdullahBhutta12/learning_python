@@ -30,5 +30,5 @@ student1 = Student("Qasim", 3.5)
 student2 = Student("Hamza", 2.9)
 student3 = Student("Kamal", 3.9)
 
-print(Student.get_count())
+print(student1.get_info())
 print(Student.get_average_gpa())
