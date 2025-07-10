@@ -24,7 +24,6 @@ while True:
 total_num = evens + odds
 
 print("Total numbers entered:", len(total_num))
-print("Even numbers:", evens)
-print("odd numbers:", odds)
-
+print("You have enter given even numbers:", evens)
+print("You have enter given odd numbers:", odds)
 
