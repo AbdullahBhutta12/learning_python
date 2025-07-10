@@ -1,7 +1,7 @@
 
 
-evens = []
-odds = []
+even_numbers = []
+odd_numbers = []
 
 print("Enter any numbers(enter 'q' for exit.)")
 
@@ -14,16 +14,16 @@ while True:
     if user.isdigit():
         number = int(user)
         if number % 2 == 0:
-            evens.append(number)
+            even_numbers.append(number)
         else:
-            odds.append(number)
+            odd_numbers.append(number)
 
     else:
         print("Only enter integers or 'q'")
 
-total_num = evens + odds
+total_num = even_numbers + odd_numbers
 
 print("Total numbers entered:", len(total_num))
-print("You have enter given even numbers:", evens)
-print("You have enter given odd numbers:", odds)
+print(f"You have enter {even_numbers} even numbers:")
+print(f"You have enter {odd_numbers} odd numbers:")
 
