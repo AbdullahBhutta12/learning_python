@@ -27,3 +27,4 @@ print("Total numbers entered:", len(total_num))
 print("Even numbers:", evens)
 print("odd numbers:", odds)
 
+
