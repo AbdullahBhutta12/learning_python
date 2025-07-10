@@ -13,3 +13,23 @@ class Car:
         print(f"You stop the {self.color} {self.model}")
     def detail(self):
         print(f"{self.year} {self.color} {self.model}")
+
+
+
+class Auto(Car):
+    pass
+
+class Manual(Car):
+    pass
+
+class Civic(Auto):
+    pass
+
+class Corolla(Manual, Auto):
+    pass
+
+class Yaris(Manual, Auto):
+    pass
+
+class Mehran(Manual):
+    pass
