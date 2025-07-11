@@ -1,46 +1,45 @@
 import random
 
 persons = []
-while True:
-    num_elements = input("Enter the number of persons: ")
 
-    print(type(num_elements))
-    if num_elements.isdigit():
-        num_elements = int(num_elements)
-        for i in range(num_elements):
-            element = input(f"Enter person {i + 1} name: ")
-            persons.append(element)
+num_elements = input("Enter the number of persons: ")
 
-        print(f"\nYou are {num_elements} persons {persons}")
+if num_elements.isdigit():
+    num_elements = int(num_elements)
+    for i in range(num_elements):
+        element = input(f"Enter person {i + 1} name: ")
+        persons.append(element)
 
-        points = [0] * num_elements
-        temp_persons = list(persons)
+    print(f"\nYou are {num_elements} persons {persons}")
 
-        for person in persons:
+    points = [0] * num_elements
+    temp_persons = list(persons)
 
-            while temp_persons:
-                member = random.choice(temp_persons)
-                print(f"\n{member}: Give (0-10) points to {persons}")
+    for person in persons:
 
-                for i in range(num_elements):
-                    print(persons[i])
-                    inputs = int(input(":"))
-                    points[i] = points[i] + inputs
-                temp_persons.remove(member)
+        while temp_persons:
+            member = random.choice(temp_persons)
+            print(f"\n{member}: Give (0-10) points to {persons}")
 
-        x = 0
-        print("\n\nResult:")
-        while x < num_elements:
-            print(f"Total points of {persons[x]} are {points[x]}")
-            x += 1
+            for i in range(num_elements):
+                print(persons[i])
+                inputs = int(input(":"))
+                points[i] = points[i] + inputs
+            temp_persons.remove(member)
 
-        n = 0
-        print("\nAverage:")
-        while n < num_elements:
-            average = points[n] / num_elements
-            print(f"Average points of {persons[n]} are {average:1f}")
-            n += 1
+    x = 0
+    print("\n\nResult:")
+    while x < num_elements:
+        print(f"Total points of {persons[x]} are {points[x]}")
+        x += 1
 
-        print("\nThanks")
-    else:
-        print("Invalid input: Plz enter integer value only")
+    n = 0
+    print("\nAverage:")
+    while n < num_elements:
+        average = points[n] / num_elements
+        print(f"Average points of {persons[n]} are {average:.2f}")
+        n += 1
+
+    print("\nThanks")
+else:
+    print("Invalid input: Plz enter integer value only")
