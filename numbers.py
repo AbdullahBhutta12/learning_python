@@ -1,9 +1,9 @@
 # Numbers
 
-age = 20
-height = 5.6
-print(f"You are {age} years old")
-print(f"Your height is {height}")
+# age = 20
+# height = 5.6
+# print(f"You are {age} years old")
+# print(f"Your height is {height}")
 
 #print(10 + 3)
 #print(10 - 3)
@@ -25,10 +25,10 @@ print(f"Your height is {height}")
 
 # User input (input()) and Type casting
 
-length = float(input("Enter length: "))
-width = float(input("Enter width: "))
-area = length * width
-print(f"The area is {area}cm")
+# length = float(input("Enter length: "))
+# width = float(input("Enter width: "))
+# area = length * width
+# print(f"The area is {area}cm")
 
 
 #name = "Abc Def"
