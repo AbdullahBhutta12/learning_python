@@ -39,9 +39,3 @@ while n < num_elements:
     n += 1
 
 print("\nThanks")
-
-
-# if 0 <= inputs >= 10:
-            #
-            # else:
-            #     print("Plz give points between 0 to 10")
