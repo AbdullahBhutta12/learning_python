@@ -1,6 +1,8 @@
 import random
 import os
 
+dictionary = ["abdullah", "adil", "ahmad", "ali", "babar", "bahadur", "danial", "dawood", "hamid", "hashir"]
+
 persons = []
 
 num_elements = input("Enter the number of persons: ")
@@ -8,8 +10,17 @@ num_elements = input("Enter the number of persons: ")
 if num_elements.isdigit():
     num_elements = int(num_elements)
     for i in range(num_elements):
-        element = input(f"Enter person {i + 1} name: ")
-        persons.append(element)
+        while True:
+            name = input(f"Enter person {i + 1} name: ")
+            if name.lower() in dictionary:
+                if name in persons:
+                    print("This name is already taken. Pleas choose any other name next time")
+
+                else:
+                    persons.append(name)
+                    break
+            else:
+                print(f"This name is not in dictionary. Pleas choose any name from this dictionary: {dictionary}")
 
     print(f"\nYou are {num_elements} persons {persons}")
 
@@ -24,14 +35,20 @@ if num_elements.isdigit():
             print(f"\n{member}: Give (0-10) points to {persons}")
 
             for i in range(num_elements):
-                print(persons[i])
-                inputs = input(":")
-                if inputs.isdigit():
-                    inputs = int(inputs)
-                    if 0 <= inputs <= 10:
-                        points[i] = points[i] + inputs
+                while True:
+                    print(persons[i])
+                    inputs = input(":")
+                    if inputs.isdigit():
+                        inputs = int(inputs)
+                        if 0 <= inputs <= 10:
+                            points[i] = points[i] + inputs
+                            break
+                        else:
+                            print(
+                                f"Invalid input: {inputs} considered as 0. You should have entered a number between (0-10).")
                     else:
-                        print("Invalid input: Plz enter integer between (0-10).")
+                        print("Invalid input: Plz enter integer value only")
+
             temp_persons.remove(member)
             if os.name == 'nt':
                 os.system('cls')
@@ -54,20 +71,3 @@ if num_elements.isdigit():
     print("\nThanks")
 else:
     print("Invalid input: Plz enter integer value only")
-
-#
-# dictionary: dict = {"A" : ["Abdullah", "Adil", "Ahmad", "Ali"]
-#               , "B" : ["Babar", "Bahadur"]
-#               , "D" : ["Danial", "Dawood"]
-#               , "H" : ["Hamid", "Hashir"]}
-#
-# import sys
-# print(dictionary)
-# print("Hamid" in dictionary)
-#
-# if inputs.isdigit():
-#     inputs = int(inputs)
-#     points[i] = points[i] + inputs
-# else:
-#     print("Invalid input: Plz enter integer value only\n END")
-#     sys.exit()
