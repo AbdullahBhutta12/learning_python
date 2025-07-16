@@ -1,4 +1,5 @@
 import random
+import os
 
 persons = []
 
@@ -18,17 +19,27 @@ if num_elements.isdigit():
     for person in persons:
 
         while temp_persons:
+
             member = random.choice(temp_persons)
             print(f"\n{member}: Give (0-10) points to {persons}")
 
             for i in range(num_elements):
                 print(persons[i])
-                inputs = int(input(":"))
-                points[i] = points[i] + inputs
+                inputs = input(":")
+                if inputs.isdigit():
+                    inputs = int(inputs)
+                    if 0 <= inputs <= 10:
+                        points[i] = points[i] + inputs
+                    else:
+                        print("Invalid input: Plz enter integer between (0-10).")
             temp_persons.remove(member)
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
 
     x = 0
-    print("\n\nResult:")
+    print("\nResult:")
     while x < num_elements:
         print(f"Total points of {persons[x]} are {points[x]}")
         x += 1
@@ -43,3 +54,20 @@ if num_elements.isdigit():
     print("\nThanks")
 else:
     print("Invalid input: Plz enter integer value only")
+
+#
+# dictionary: dict = {"A" : ["Abdullah", "Adil", "Ahmad", "Ali"]
+#               , "B" : ["Babar", "Bahadur"]
+#               , "D" : ["Danial", "Dawood"]
+#               , "H" : ["Hamid", "Hashir"]}
+#
+# import sys
+# print(dictionary)
+# print("Hamid" in dictionary)
+#
+# if inputs.isdigit():
+#     inputs = int(inputs)
+#     points[i] = points[i] + inputs
+# else:
+#     print("Invalid input: Plz enter integer value only\n END")
+#     sys.exit()
