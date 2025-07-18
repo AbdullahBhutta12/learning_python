@@ -1,7 +1,7 @@
 import random
 import os
 
-dictionary = ["abdullah", "adil", "ahmad", "ali", "babar", "bahadur", "danial", "dawood", "hamid", "hashir"]
+dictionary = ["abdullah", "abrar", "adil", "ahmad", "ali", "arslan", "asim", "babar", "bahadur", "danial", "dawood", "faizan", "faiz", "hamid", "hashir", "hamza", "ibrahim", "iqbal", "ismail", "junaid", "kashif", "mahad", "majid", "muhamin", "muhammad", "muneeb", "muzamil", "nadeem", "noman", "omer", "qasim", "rashid", "rizwan", "sajid", "saleem", "salman", "saqib", "sharjeel", "talha", "umer", "usama", "usman", "waqas", "wasif", "younas", "zain"]
 
 persons = []
 
@@ -14,13 +14,13 @@ if num_elements.isdigit():
             name = input(f"Enter person {i + 1} name: ")
             if name.lower() in dictionary:
                 if name in persons:
-                    print("This name is already taken. Pleas choose any other name next time")
+                    print("This name is already taken. Please choose any other name next time")
 
                 else:
                     persons.append(name)
                     break
             else:
-                print(f"This name is not in dictionary. Pleas choose any name from this dictionary: {dictionary}")
+                print(f"This name is not in dictionary. Please choose any name from this dictionary: {dictionary}")
 
     print(f"\nYou are {num_elements} persons {persons}")
 
