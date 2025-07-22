@@ -1,9 +1,7 @@
 import random
 import os
 
-dictionary = ["abdullah", "abrar", "adil", "ahmad", "ali", "arslan", "asim", "babar", "bahadur", "danial", "dawood", "faizan", "faiz", "hamid", "hashir", "hamza", "ibrahim", "iqbal", "ismail", "junaid", "kashif", "mahad", "majid", "muhamin", "muhammad", "muneeb", "muzamil", "nadeem", "noman", "omer", "qasim", "rashid", "rizwan", "sajid", "saleem", "salman", "saqib", "sharjeel", "talha", "umer", "usama", "usman", "waqas", "wasif", "younas", "zain"]
-
-persons = []
+persons = {}
 
 num_elements = input("Enter the number of persons: ")
 
@@ -12,36 +10,34 @@ if num_elements.isdigit():
     for i in range(num_elements):
         while True:
             name = input(f"Enter person {i + 1} name: ")
-            if name.lower() in dictionary:
-                if name in persons:
-                    print("This name is already taken. Please choose any other name next time")
+            name = name.lower()
+            if name in persons:
+                print("This name is already taken.")
 
-                else:
-                    persons.append(name)
-                    break
             else:
-                print(f"This name is not in dictionary. Please choose any name from this dictionary: {dictionary}")
+                persons[name] = i + 1
+                break
 
     print(f"\nYou are {num_elements} persons {persons}")
 
-    points = [0] * num_elements
-    temp_persons = list(persons)
+    temp_persons = list(persons.keys())
+    persons_list = list(persons.keys())
 
     for person in persons:
 
         while temp_persons:
 
             member = random.choice(temp_persons)
-            print(f"\n{member}: Give (0-10) points to {persons}")
+            print(f"\n{member}: Give (0-10) points to {list(persons.keys())}")
 
             for i in range(num_elements):
                 while True:
-                    print(persons[i])
+                    print(persons_list[i])
                     inputs = input(":")
                     if inputs.isdigit():
                         inputs = int(inputs)
                         if 0 <= inputs <= 10:
-                            points[i] = points[i] + inputs
+                            persons[persons_list[i]] += inputs
                             break
                         else:
                             print(
@@ -55,19 +51,18 @@ if num_elements.isdigit():
             else:
                 os.system('clear')
 
-    x = 0
-    print("\nResult:")
-    while x < num_elements:
-        print(f"Total points of {persons[x]} are {points[x]}")
-        x += 1
 
-    n = 0
+    print("\nResult:")
+    for name, point in persons.items():
+        print(f"Total points of {name} are {point}")
+
+
     print("\nAverage:")
-    while n < num_elements:
-        average = points[n] / num_elements
-        print(f"Average points of {persons[n]} are {average:.2f}")
-        n += 1
+    for name, point in persons.items():
+        average = point / num_elements
+        print(f"Average points of {name} are {average:.2f}")
 
     print("\nThanks")
 else:
     print("Invalid input: Plz enter integer value only")
+
