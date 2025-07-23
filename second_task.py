@@ -56,17 +56,28 @@ if num_elements.isdigit():
 
     print("\nResult:")
     for name, point in persons.items():
-        print(f"Total points of {name} are {point}")
+        print(f"Total points of {name}: {point}")
 
     print("\nAverage:")
     for name, point in persons.items():
         average = point / num_elements
-        print(f"Average points of {name} are {average:.2f}")
-    #
-    # file_path = "/home/abdullah-saeed/results_2nd-task.txt"
-    # txt = "Results: \n"
-    # with open(file_path, "w") as file:
-    #     file.write(txt)
+        print(f"Average points of {name}: {average:.2f}")
+
+    file_path = "/home/abdullah-saeed/results_2nd-task.txt"
+    res = "\nResult: \n"
+    avr = "\nAverage: \n"
+    with open(file_path, "a") as file:
+        file.write(res)
+        for name, point in persons.items():
+            data = f"Total points of {name}: {point}\n"
+            file.write(data)
+
+        file.write(avr)
+        for name, point in persons.items():
+            average = point / num_elements
+            data = f"Average points of {name}: {average:.2f}\n"
+            file.write(data)
+    print("Data saved")
 
     print("\nThanks")
 else:
