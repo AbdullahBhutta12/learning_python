@@ -1,0 +1,58 @@
+{
+    "ali": {
+        "points": 56,
+        "rounds": 4
+    },
+    "adil": {
+        "points": 16,
+        "rounds": 1
+    },
+    "ahmed": {
+        "points": 13,
+        "rounds": 1
+    },
+    "hamid": {
+        "points": 25,
+        "rounds": 1
+    },
+    "qasim": {
+        "points": 16,
+        "rounds": 1
+    },
+    "fahad": {
+        "points": 18,
+        "rounds": 1
+    },
+    "babar": {
+        "points": 40,
+        "rounds": 3
+    },
+    "sabir": {
+        "points": 19,
+        "rounds": 1
+    },
+    "basit": {
+        "points": 19,
+        "rounds": 1
+    },
+    "mahad": {
+        "points": 24,
+        "rounds": 1
+    },
+    "bilal": {
+        "points": 21,
+        "rounds": 1
+    },
+    "zahid": {
+        "points": 13,
+        "rounds": 1
+    },
+    "hayder": {
+        "points": 17,
+        "rounds": 1
+    },
+    "amir": {
+        "points": 18,
+        "rounds": 1
+    }
+}

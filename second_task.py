@@ -1,5 +1,15 @@
 import random
 import os
+import json
+
+file_path = "results_2nd-task.json"
+previous_data = {}
+if os.path.exists(file_path):
+    with open(file_path, "r") as file:
+        loaded = json.load(file) # previous_data = json.load(file)
+        for key, value in loaded.items():
+            if isinstance(value, dict) and "points" in value and "rounds" in value:
+                previous_data[key] = value
 
 persons = {}
 
@@ -11,7 +21,7 @@ if num_elements.isdigit():
         while True:
             name = input(f"Enter person {i + 1} name: ")
             if name.isalpha():
-                name = name.lower()
+                name = name.strip()
                 if name in persons:
                     print("This name is already taken.")
                 else:
@@ -36,7 +46,7 @@ if num_elements.isdigit():
             for i in range(num_elements):
                 while True:
                     print(persons_list[i])
-                    inputs = input(":")
+                    inputs = input(": ")
                     if inputs.isdigit():
                         inputs = int(inputs)
                         if 0 <= inputs <= 10:
@@ -54,31 +64,32 @@ if num_elements.isdigit():
             else:
                 os.system('clear')
 
-    print("\nResult:")
-    for name, point in persons.items():
-        print(f"Total points of {name}: {point}")
+    for name in persons:
+        if name in previous_data:
+            previous_data[name]["points"] += persons[name]
+            previous_data[name]["rounds"] += 1
+        else:
+            previous_data[name] = {
+                "points": persons[name],
+                "rounds": 1
+            }
 
-    print("\nAverage:")
-    for name, point in persons.items():
-        average = point / num_elements
-        print(f"Average points of {name}: {average:.2f}")
+    with open(file_path, "w") as file:
+        json.dump(previous_data, file, indent=4)
 
-    file_path = "/home/abdullah-saeed/results_2nd-task.txt"
-    res = "\nResult: \n"
-    avr = "\nAverage: \n"
-    with open(file_path, "a") as file:
-        file.write(res)
-        for name, point in persons.items():
-            data = f"Total points of {name}: {point}\n"
-            file.write(data)
+    print("Result:")
+    for name in sorted(persons):
+        if name in previous_data:
+            data = previous_data[name]
+            points = previous_data[name]["points"]
+            rounds = previous_data[name]["rounds"]
+            average = points / rounds
+            print(f"\n{name}:\n  Total points = {points}     Average = {average:.2f}  over  {rounds} round(s)")
+        else:
+            print(f"{name} No data found")
 
-        file.write(avr)
-        for name, point in persons.items():
-            average = point / num_elements
-            data = f"Average points of {name}: {average:.2f}\n"
-            file.write(data)
-    print("Data saved")
+    print("\nData saved")
 
-    print("\nThanks")
+    print("Thanks")
 else:
     print("Invalid input: Plz enter integer value only")
