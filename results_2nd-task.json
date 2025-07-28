@@ -1,15 +1,15 @@
 {
     "ali": {
-        "points": 56,
-        "rounds": 4
+        "points": 78,
+        "rounds": 6
     },
     "adil": {
         "points": 16,
-        "rounds": 1
+        "rounds": 2
     },
     "ahmed": {
         "points": 13,
-        "rounds": 1
+        "rounds": 2
     },
     "hamid": {
         "points": 25,
@@ -24,8 +24,8 @@
         "rounds": 1
     },
     "babar": {
-        "points": 40,
-        "rounds": 3
+        "points": 56,
+        "rounds": 4
     },
     "sabir": {
         "points": 19,
@@ -53,6 +53,46 @@
     },
     "amir": {
         "points": 18,
+        "rounds": 1
+    },
+    "aa": {
+        "points": 18,
+        "rounds": 4
+    },
+    "sss": {
+        "points": 19,
+        "rounds": 1
+    },
+    "ddd": {
+        "points": 20,
+        "rounds": 1
+    },
+    "aaaa": {
+        "points": 17,
+        "rounds": 1
+    },
+    "mm": {
+        "points": 14,
+        "rounds": 1
+    },
+    "nn": {
+        "points": 18,
+        "rounds": 1
+    },
+    "ll": {
+        "points": 7,
+        "rounds": 2
+    },
+    "mn": {
+        "points": 15,
+        "rounds": 1
+    },
+    "shehzad": {
+        "points": 15,
+        "rounds": 1
+    },
+    "azhar": {
+        "points": 7,
         "rounds": 1
     }
 }

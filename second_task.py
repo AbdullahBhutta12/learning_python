@@ -21,7 +21,7 @@ if num_elements.isdigit():
         while True:
             name = input(f"Enter person {i + 1} name: ")
             if name.isalpha():
-                name = name.strip()
+                name = name.lower()
                 if name in persons:
                     print("This name is already taken.")
                 else:
@@ -66,7 +66,7 @@ if num_elements.isdigit():
 
     for name in persons:
         if name in previous_data:
-            previous_data[name]["points"] += persons[name]
+            # previous_data[name]["points"] += persons[name]
             previous_data[name]["rounds"] += 1
         else:
             previous_data[name] = {
@@ -80,11 +80,11 @@ if num_elements.isdigit():
     print("Result:")
     for name in sorted(persons):
         if name in previous_data:
-            data = previous_data[name]
-            points = previous_data[name]["points"]
+            points = persons[name]
             rounds = previous_data[name]["rounds"]
-            average = points / rounds
-            print(f"\n{name}:\n  Total points = {points}     Average = {average:.2f}  over  {rounds} round(s)")
+            total_average = points / rounds
+            average = points / num_elements
+            print(f"\n{name}:\n  Points = {points} \n  Present Average = {average:.2f} \n  Overall average = {total_average}  over  {rounds} round(s)")
         else:
             print(f"{name} No data found")
 
