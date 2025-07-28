@@ -66,7 +66,6 @@ if num_elements.isdigit():
 
     for name in persons:
         if name in previous_data:
-            # previous_data[name]["points"] += persons[name]
             previous_data[name]["rounds"] += 1
         else:
             previous_data[name] = {
